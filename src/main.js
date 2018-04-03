@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'lib-flexible/flexible'
+import $ from 'jquery';
+// window.jQuery = $;
+// window.$ = $;
 
 import iView from 'iview'
  // import 'iview/dist/styles/iview.css'    // 使用 CSS

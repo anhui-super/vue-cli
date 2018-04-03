@@ -2,17 +2,37 @@
     <div id="Sign_In" class="Sign_In">
         <!--后退顶部-->
         <sign_top :statue="login_status" v-on:on_login="Login"></sign_top>
+        <!--&lt;!&ndash;登录&ndash;&gt;-->
+        <!--<sign_login v-if="login_status==0" v-on:Forget="Fget" v-on:load="Loading"></sign_login>-->
 
-        <!--路由-->
+        <!--忘记密码-->
+        <!--<sgin_forget_register v-if="login_status==1" v-on:load="Loading"></sgin_forget_register>-->
+        <!--忘记密码-->
         <router-view></router-view>
 
-        <!-- 加载动画 -->
+        <!--&lt;!&ndash;&lt;!&ndash;登录&ndash;&gt;&ndash;&gt;-->
+        <!--<router-view name="login"></router-view>-->
+
+        <!--&lt;!&ndash;账号注册&ndash;&gt;-->
+        <!--<router-view name="forget"></router-view>-->
+
+        <!--&lt;!&ndash;账号注册&ndash;&gt;-->
+        <!--<sgin_register v-if="login_status==2" v-on:load="Loading"></sgin_register>-->
+
+        <!--其他登录方式-->
+        <sign_foot v-if=" !android && login_status==0"></sign_foot>
+
+        <!-- 加载 -->
         <loading v-if="loading"></loading> 
 
     </div>
 </template>
 <script>
     import sign_top from './common/Sign_In_Top.vue'
+    import sign_login from './Sign_In_login.vue'
+    import sign_foot from './common/Sign_In_Foot.vue'
+    import sgin_forget_register from './Sign_In_register_forget.vue'
+    import sgin_register from './Sign_In_registe.vue'
 
     import loading from '../common/loading.vue'
     export default {
@@ -24,6 +44,9 @@
           }
         },
         methods:{
+          Fget:function () {
+            this.login_status=1
+          },
           Loading:function(statue){
             this.loading=statue
           },
@@ -32,16 +55,22 @@
           }
         },
         components:{
-          sign_top,loading
+          sign_top,sign_foot,sign_login,sgin_forget_register,sgin_register,loading
         },
         created(){
+          // console.log(ostatus= 1)
+          // console.log(333)
             var _this = this;
             var win_h = $(window).height();
             $(window).on('resize', function () {
                 if ($(window).height() < win_h) {
                     _this.android = true
+                    // $('.recharge-foot').hide();
+                    // alert(this.android)
                 } else {
+                    // alert(this.android)
                     _this.android = false
+                    // $('.recharge-foot').show();
                 }
             })
         }

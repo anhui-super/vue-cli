@@ -1,7 +1,11 @@
 <template>
     <div class="loading">
         <div class="box">
-        	<img src="../../assets/img/loading1.gif">
+          <div class="Load">
+            <img src="../../assets/img/loading1.gif">
+            <span>加载中</span>
+          </div>
+        	
         </div>
     </div>
 </template>
@@ -17,18 +21,29 @@
    	height: 100%;
    }
    .box{
-   	width: 140px;
-   	height: 140px;
-   	line-height: 140px;
+   	width: 100%;
+   	height: 100%;
    	background: #fff;
-   	border-radius: 15px;
-   	box-shadow: 0px 0px 15px rgba(0,0,0,.15);
-   	position: absolute;
-   	top: 50%;
-   	left: 50%;
-   	margin: -70px 0 0 -70px;
+    position: absolute;
+    top: 0;left: 0
+   
+   	
    }
-   .box img{
-   	width: 100%
+   .box .Load{
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -90px 0 0 -70px;
+    /*box-shadow: 0px 0px 15px rgba(0,0,0,.15);*/
+    border-radius: 10px;
+    font-size: 24px;
+    color: #b2b2b2;
+    text-align: center;
+   }
+   .Load img{
+    width: 100%;
+    margin-bottom: 5px
    }
 </style>

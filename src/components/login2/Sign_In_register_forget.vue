@@ -24,12 +24,9 @@
         <!--按钮-->
         <input type="submit" :disabled="btn_disable" class="btn" name=""   v-on:click="loginpost" v-model="btn_txt">
 
-
-
     </div>
 </template>
 <script>
-
   export default {
     name: 'hello',
     data () {
@@ -58,7 +55,7 @@
         btn_txt:'下一步'
       }
     },
-
+   
     methods:{
       inputchange:function () {
         this.hide=true
@@ -72,6 +69,7 @@
          }
       },
       loginpost:function(){
+        console.log(this.next)
         if(this.next==0){
               this.$axios.post(this.code_url_btn,this.qs.stringify({
                 "username":this.phone,

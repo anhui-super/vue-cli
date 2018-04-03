@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
     <title>聚橙网</title>
   </head>
@@ -12,7 +11,7 @@
     <script type="text/javascript">
         var ostatus=0,                 //页面状态 0.登入页面 1.忘记密码 2.账号注册
             login_style   = false,     //登入方式 true:手机快捷登陆  false:账号密码登录
-            To_login_url  = 'https://www.baidu.com',         //登入成功后跳转地址
+            To_login_url  = 'https://m.juooo.com',         //登入成功后跳转地址
             code_url      = '/passport/sendsms' ,       //验证码接口
             code_url_btn  = '/passport/quickLogin',     //手机验证码登录
             login_url     = '/passport/login',           //账号密码登入
@@ -20,6 +19,29 @@
             checkPassCode  = '/passport/checkPassCode',  //找回密码验证
             pass_url      = '/passport/resetNewPass',    //密码验证
             kjlogin       =  '/passport/kjlogin';        //QQ新浪百度登录
+
+
+            /* 
+            * 连接后 接?status=1&login=true 
+            * 获取连接地址
+            * 截取     
+            */
+//            var oname  = 'status=',
+//                oname2 = 'login=',
+//                test   = window.location.href,
+//                status = test.indexOf(oname),
+//                data   = test.substr(status*1+oname.length),
+//                index1 = data.indexOf('&'),
+//                log    = data.indexOf(oname2),
+//                index2 = data.indexOf(),
+//
+//                a = data.slice(log*1+oname2.length),
+//                b = data.slice(0,index1);
+//
+//                login_style = data.slice(log*1+oname2.length)*1
+//                ostatus = data.slice(0,index1)*1
+
+
     </script>
   </body>
 

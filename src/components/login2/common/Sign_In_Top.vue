@@ -4,8 +4,7 @@
             <span class="router iconfont icon-dinglanleft" onclick="window.history.go(-1)"></span>
         </span>
         <span class="w50">
-             <router-link class="router" to="/passport/login_1" v-if="statue!=2"  v-on:click.native="on_status">登入</router-link>
-             <router-link class="router" to="/passport/registe" v-else  v-on:click.native="on_status">注册</router-link>
+            <span class="router" v-on:click="on_status">{{statue!=2?'注册':'登入'}}</span>
         </span>
     </div>
 </template>
